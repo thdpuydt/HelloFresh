@@ -741,7 +741,7 @@ def bootschappenlijstje(gerechten, ingr_df):
 
 
 
-def pictures(gerechten):
+def pictures(gerechten, ingr_df):
 
     '''
     input:
@@ -752,18 +752,18 @@ def pictures(gerechten):
 
     gerechten = list(gerechten.query("select == True")['gerecht'])
 
-
+    indexes = list(ingr_df.query("gerecht in @gerechten")['index'])
 
     files = glob.glob('geselecteerde gerechten/*')
     for f in files:
         os.remove(f)
 
-    for gerecht in gerechten:
+    for index in indexes:
         try:
-            copyfile('alle gerechten/{} voor.jpg'.format(gerecht), 'geselecteerde gerechten/{} voor.jpg'.format(gerecht))
-            copyfile('alle gerechten/{} achter.jpg'.format(gerecht), 'geselecteerde gerechten/{} achter.jpg'.format(gerecht))
+            copyfile('alle gerechten/{}_1.jpg'.format(index), 'geselecteerde gerechten/{}_1.jpg'.format(index))
+            copyfile('alle gerechten/{}_2.jpg'.format(index), 'geselecteerde gerechten/{}_2.jpg'.format(index))
         except:
-            print("[INFO]\t Foto van gerecht '{}' werd niet gevonden".format(gerecht))
+            print("[INFO]\t Foto van gerecht '{}' werd niet gevonden".format(index))
 
 
 
@@ -792,7 +792,7 @@ if __name__ == '__main__':
     lijstje = bootschappenlijstje(gerechten, ingr_df)
 
     # copy pictures
-    pictures(gerechten)
+    pictures(gerechten, ingr_df)
 
     # verbose
     print("\n\nRecepten bevinden zich in de folder 'geselecteerde recepten'")
