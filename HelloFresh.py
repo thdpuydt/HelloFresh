@@ -1119,7 +1119,10 @@ def pictures(gerechten, ingr_df):
     gerechten = list(gerechten.query("select == True")['gerecht'])
 
     indexes = list(ingr_df.query("gerecht in @gerechten")['index'])
-
+    
+    if not os.path.exists('geselecteerde gerechten'):
+        os.makedirs('geselecteerde gerechten')
+           
     files = glob.glob('geselecteerde gerechten/*')
     for f in files:
         os.remove(f)
