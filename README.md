@@ -24,3 +24,5 @@ Dependancies:
 3) copy paste into google keep & go shopping!
 
 <img src="fig_keep.png" width="250">  
+
+4) fetch recipe from folder *geselecteerde gerechten* and get cooking
