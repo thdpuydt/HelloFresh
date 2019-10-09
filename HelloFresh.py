@@ -1171,6 +1171,6 @@ if __name__ == '__main__':
     print("\n\nRecepten bevinden zich in de folder 'geselecteerde recepten'")
 
     # verbose
-    print('\n\n      ~~ BOOTSCHAPPENLIJSTJE ~~\n')
+    print('\n\n      ~~ BOODSCHAPPENLIJSTJE ~~\n')
     print(lijstje)
     print()
