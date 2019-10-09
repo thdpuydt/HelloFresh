@@ -21,8 +21,10 @@ Dependancies:
 
 <img src="fig_command_line.png" width="500">  
 
-3) copy paste into google keep & go shopping!
+3) Copy paste into google keep & go shopping!
 
 <img src="fig_keep.png" width="250">  
 
-4) fetch recipe from folder *geselecteerde gerechten* and get cooking
+4) Fetch recipes from folder 'geselecteerde gerechten'  
+
+5) Get cooking
