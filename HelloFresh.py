@@ -1,6 +1,7 @@
 import os
 import glob
 import pandas as pd
+from sys import argv
 from shutil import copyfile
 
 
@@ -869,12 +870,12 @@ ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
 
 #----------------------------------------------------------------------
 
+
 oude_ingr = set(ingr_df['ingredienten'])
 nieuwe_ingr = []
 
 
 #----------------------------------------------------------------------
-
 
 
 index = 'F10'
@@ -1059,8 +1060,356 @@ nieuwe_ingr += ingredienten
 #----------------------------------------------------------------------
 
 
+oude_ingr = set(ingr_df['ingredienten'])
+nieuwe_ingr = []
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'A11'
+gerecht = 'Bulgur linzensalade met geitenkaas'
+
+ingredienten = ['groene linzen',
+                'bulgur',
+                'rode ajuin',
+                'amandelschaafsel',
+                'avocado',
+                'cherrytomaten',
+                'slahart',
+                'geitenkaas']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [35], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [30,45,0.5,10,0.25,60,1,40],
+          '2p': [60,85,1,20,.5,125,2,75],
+          '3p': [90,130,1.5,30,0.75,185,3,100],
+          '4p': [120,170,2,40,1,250,4,125]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'V23'
+gerecht = 'Visstoofpot met koolvis en spekjes'
+
+ingredienten = ['aardappelen',
+                'prei',
+                'courgette',
+                'spekblokjes',
+                'kokosmelk',
+                'koolvishaasje']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [25], 
+           'veggie': [False]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [45,250,.5,.5,2075,100],
+          '2p': [el*2 for el in [45,250,.5,.5,2075,100]],
+          '3p': [el*3 for el in [45,250,.5,.5,2075,100]],
+          '4p': [el*4 for el in [45,250,.5,.5,2075,100]]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'V21'
+gerecht = 'Schelvisfilet met bislooksaus'
+
+ingredienten = ['wortelen',
+                'aardappelen',
+                'bislook',
+                'yoghurt',
+                'schelvisfilet']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [40], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [200,250,2.5,25,1],
+          '2p': [el*2 for el in [200,250,2.5,25,1]],
+          '3p': [el*3 for el in [200,250,2.5,25,1]],
+          '4p': [el*4 for el in [200,250,2.5,25,1]]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'A12'
+gerecht = 'Tomaat-paprikasoep met parelcouscous'
+
+ingredienten = ['ajuin',
+                'knoflookteen',
+                'tomaat',
+                'rode paprika',
+                'gedroogde abrikozen',
+                'dragon',
+                'parelcouscous',
+                'witte ciabatta',
+                'zure room',
+                'geraspte kaas']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [30], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [.5,1,2,.5,20,2.5,30,1,25,12.5],
+          '2p': [el*2 for el in [.5,1,2,.5,20,2.5,30,1,25,12.5]],
+          '3p': [el*3 for el in [.5,1,2,.5,20,2.5,30,1,25,12.5]],
+          '4p': [el*4 for el in [.5,1,2,.5,20,2.5,30,1,25,12.5]]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'F18'
+gerecht = 'Vegetarische Mexicaanse kapsalon'
+
+ingredienten = ['zoete aardappel',
+                'zwarte bonen',
+                'maiskolf',
+                'avocado',
+                'sjalot',
+                'rode peper',
+                'knoflookteen',
+                'koriander',
+                'tomaat',
+                'geraspte kaas',
+                'zure room']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [50], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [300,.5,.5,.5,.25,.25,.25,5,1,12,25],
+          '2p': [el*2 for el in [300,.5,.5,.5,.25,.25,.25,5,1,12,25]],
+          '3p': [el*3 for el in [300,.5,.5,.5,.25,.25,.25,5,1,12,25]],
+          '4p': [el*4 for el in [300,.5,.5,.5,.25,.25,.25,5,1,12,25]]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'P26'
+gerecht = 'Spaghetti carbonara'
+
+ingredienten = ['spaghetti',
+                'knoflookteen',
+                'sjalot',
+                'krulpeterselie',
+                'gemengde paddenstoelen',
+                'panko',
+                'geraspte kaas',
+                'ei']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [20], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [90,1,.5,5,175,15,50,1],
+          '2p': [180,2,1,10,350,25,75,2],
+          '3p': [270,3,1.5,15,525,40,125,3],
+          '4p': [360,4,2,20,700,50,150,4]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'A13'
+gerecht = 'Flammkuchen met pompoenroomsaus'
+
+ingredienten = ['pompoenblokjes',
+                'kookroom',
+                'rode ajuin',
+                'feta',
+                'flammkuchen',
+                'pompoenpitten',
+                'rucola']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [30], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [100,100,1,40,1,5,20],
+          '2p': [200,200,2,75,2,10,40],
+          '3p': [300,300,3,100,3,15,60],
+          '4p': [400,400,4,125,4,20,80]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'P28'
+gerecht = 'Cannelloni met romige spinazie-champignonvulling'
+
+ingredienten = ['champignons',
+                'knoflookteen',
+                'spinazie',
+                'mascarpone',
+                'geraspte kaas',
+                'passata',
+                'lasagnebladen']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [50], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [125,0.5,100,45,25,.5,125],
+          '2p': [250,1,150,90,50,1,250],
+          '3p': [375,1.5,200,135,75,1.5,375],
+          '4p': [500,2,250,180,100,2,500]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
+
+index = 'A14'
+gerecht = 'Ovenschotel met groenten, ei en feta'
+
+ingredienten = ['aardappelen',
+                'rode ajuin',
+                'tomaat',
+                'rode puntpaprika',
+                'munt',
+                'peterselie',
+                'knoflookteen',
+                'yoghurt',
+                'komkommer',
+                'ei',
+                'feta']
+
+specs = {'index': [index],
+           'gerecht': [gerecht],
+           'tijd': [45], 
+           'veggie': [True]}
+
+ingr = {'index': [index]*len(ingredienten),
+          'gerecht': [gerecht]*len(ingredienten),
+          'ingredienten': ingredienten,
+          '1p': [200,.25,1.5,.5,5,5,1,50,.5,2,50],
+          '2p': [el*2 for el in [200,.25,1.5,.5,5,5,1,50,.5,2,50]],
+          '3p': [el*3 for el in [200,.25,1.5,.5,5,5,1,50,.5,2,50]],
+          '4p': [el*4 for el in [200,.25,1.5,.5,5,5,1,50,.5,2,50]]
+         }
+
+specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
+ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
+
+#----------------------------------------------------------------------
+
+
 
 '''
+
+#----------------------------------------------------------------------
+
+oude_ingr = set(ingr_df['ingredienten'])
+nieuwe_ingr = []
+
+
 
 #----------------------------------------------------------------------
 
@@ -1091,6 +1440,10 @@ ingr = {'index': [index]*len(ingredienten),
 
 specs_df = specs_df.append(pd.DataFrame(specs).set_index('gerecht'))
 ingr_df = ingr_df.append(pd.DataFrame(ingr).set_index('gerecht'))
+
+
+nieuwe_ingr += ingredienten
+
 
 #----------------------------------------------------------------------
 
@@ -1199,7 +1552,24 @@ plaats_dict = {'champignons': 'frigo',
                 'gele paprika': 'frigo',
                 'buffelmozzarella': 'frigo',
                 'pijnboompitten': 'droog',
-                'conchiglie': 'deegwaren'}
+                'conchiglie': 'deegwaren',
+                'witte ciabatta': 'bakkerij',
+                'gemengde paddenstoelen': 'frigo',
+                'flammkuchen': 'bakkerij',
+                'yoghurt': 'frigo',
+                'groene linzen': 'blik',
+                'bislook': 'frigo',
+                'maiskolf': 'frigo',
+                'pompoenblokjes': 'frigo',
+                'amandelschaafsel': 'droog',
+                'spekblokjes': 'frigo',
+                'mascarpone': 'frigo',
+                'kookroom': 'frigo',
+                'gedroogde abrikozen': 'droog',
+                'koolvishaasje': 'frigo',
+                'krulpeterselie': 'frigo',
+                'bulgur': 'deegwaren',
+                }
 
 
 plaats = pd.DataFrame(plaats_dict, index=['plaats']).T.reset_index()
@@ -1298,7 +1668,7 @@ def pictures(gerechten, ingr_df):
 
     gerechten = list(gerechten.query("select == True")['gerecht'])
 
-    indexes = list(ingr_df.query("gerecht in @gerechten")['index'])
+    indexes = set(ingr_df.query("gerecht in @gerechten")['index'])
     
     if not os.path.exists('geselecteerde gerechten'):
         os.makedirs('geselecteerde gerechten')
@@ -1330,17 +1700,24 @@ def pictures(gerechten, ingr_df):
 
 if __name__ == '__main__':
 
-    # read in wanted recipes
-    gerechten = pd.read_excel('HelloFresh_gerechten.xlsx', name='Sheet1')
 
-    # print all ingredients
-    get_ingredients = False
-
-    if get_ingredients:
+    if len(argv) > 1 and argv[1] == 'build':
+        
+        # print new ingredients
         for el in set(nieuwe_ingr):
             if el not in oude_ingr:
                 print("'{}': '',".format(el))
+
+        # make excel file
+        specs_df['select'] = 'FALSE'
+        specs_df['personen'] = 3
+        specs_df.sort_values('index').to_excel('HelloFresh_gerechten.xlsx')
+        print('\n[INFO] Excel file saved to HelloFresh_gerechten.xlsx\n')
+
         exit()
+
+    # read in wanted recipes
+    gerechten = pd.read_excel('HelloFresh_gerechten.xlsx', name='Sheet1').loc[:,['gerecht','select', 'personen']]
 
     # make magic
     lijstje = bootschappenlijstje(gerechten, ingr_df)
